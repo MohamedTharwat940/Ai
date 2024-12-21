@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Link to the CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='Style.css') }}">
+    <!-- <link rel="stylesheet" href="../static/Style.css"> -->
+    <title>Yearly Spent Prediction</title>
+  </head>
+  <body>
+    <div class="box1">
+      <div class="Container">
+        <span class="app_name"> Yearly Spent Prediction </span>
+        <form id="predictionForm" method="POST" action="/predict">
+          <div class="Input-Text">
+            <input
+              type="number"
+              name="Avg"
+              id="Avg"
+              placeholder="Avg. Session Length"
+              required
+            />
+          </div>
+          <!-- <br /> -->
+          <div class="Input-Text">
+            <input
+              type="number"
+              name="Toapp"
+              id="Toapp"
+              placeholder="Time On App"
+              required
+            />
+          </div>
+          <!-- <br /> -->
+          <div class="Input-Text">
+            <input
+              type="number"
+              name="Toweb"
+              id="Toweb"
+              placeholder="Time On Website"
+              required
+            />
+          </div>
+          <!-- <br /> -->
+          <div class="Input-Text">
+            <input
+              type="number"
+              name="Lomember"
+              id="Lomember"
+              placeholder="Length Of Membership"
+              required
+            />
+          </div>
+          <div class="box2">
+            <input type="submit" name="Predict" value="Predict" />
+          </div>
+        </form>
+        <div id="result">
+          <!-- Predictions will be displayed here -->
+        </div>
+      </div>
+    </div>
+    <!-- Link to the JS file -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
